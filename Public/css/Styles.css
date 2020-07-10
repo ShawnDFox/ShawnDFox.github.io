@@ -37,7 +37,7 @@ body
     font-family: orbitron-med;
     height: 100vh;
     width: 100vw;
-    color: white;
+    color: rgb(210, 225, 231);
     background-image: url("../img/BG.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -300,9 +300,10 @@ nav>div>a:hover
 /*===================================== Hexagons ===========================================*/
 .hex
 {
-    width: 200px;
-    height: 200px;
-    background: url("../img/Hex_border-02.png");
+    width: 160px;
+    height: 160px;
+    background: url("../img/Hex_border-02.png") no-repeat;
+    background-size: 160px 160px;
     
 }
 
@@ -311,9 +312,10 @@ nav>div>a:hover
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     background-image: url("../img/Hex_fill-01.png");
+    background-size: 160px 160px;
 }
 /*======================================== progress bar ==========================================*/
 .BG_bar
