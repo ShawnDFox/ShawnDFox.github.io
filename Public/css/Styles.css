@@ -71,9 +71,25 @@ h1, h2, h3
     font-size: 25px;
     height: 100vh;
     width: 100%;
-    padding-left: 15px;
+    /*padding-left: 15px;*/
     padding-right: 105px;
     overflow-y: auto;
+
+}
+.p_content
+{
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    background-color: rgba(0, 0, 0, 0.109);
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 25px;
+    height: 80vh;
+    width: 100%;
+    padding: 15px;
+    
+    overflow-y: auto;
+    overflow-x: none;
 
 }
 .scrollable
@@ -95,6 +111,7 @@ h1, h2, h3
 {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-direction: column;
     align-items: center;
     height: 95vh;
@@ -105,23 +122,23 @@ h1, h2, h3
 .sidebar>div{
     
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.35vw;
     
-    justify-content: space-around;
-    font-size: 30px;
-   
    
 }
+
 /*============================================= sidebar images ============================================*/
 .photo-display
 {
-    display: grid;
     flex-direction: column;
-    align-items: center;
+    /*align-items: center;*/
 }
 .photo-decoration
 {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     animation: rotation 120s infinite linear;
 }
 @keyframes rotation {
@@ -136,13 +153,12 @@ h1, h2, h3
 {
     position: absolute;
     scale: 0.7;
-    width: 355px;
-    height: 355px;
+    width: 305px;
+    height: 305px;
    /* margin-top: 10.8vh;*/
     border-radius: 50%;
     background-color: #2FC1F4b4;
-    /*-webkit-box-shadow: 0px 0px 120px -36px #00f7ffe6;
-    -moz-box-shadow: 0px 0px 120px -36px rgba(0,247,255,0.9);*/
+   
     box-shadow: 0px 0px 120px -36px rgba(0,247,255,0.9);
 
     z-index: -1;
@@ -163,8 +179,8 @@ h1, h2, h3
 .photo
 {
     scale: 0.7;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     object-position: 0 10%;
     /*margin-top: 11vh;*/
@@ -183,11 +199,13 @@ a{
     text-decoration: none;
     vertical-align: baseline;
 }
-/*
+
 a:link {
     text-decoration: none;
     color: white;
   }
+/*
+
   
   a:visited {
     text-decoration: none;
@@ -293,8 +311,46 @@ nav>div>a:hover
 .f_row
 {
     display: flex;
-    flex-direction: row;
-    font-size: 35px;
+    flex-direction: row;   
+}
+li{
+    list-style-type: square;
+    margin-right: 10px;
+    margin-left: 20px;
+}
+li > a:any-link
+{
+    text-decoration: none;
+    color: rgb(210, 225, 231);
+}
+.tab{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-inline-start: 0px;
+}
+.tab >li{
+    list-style-type: none;
+    text-decoration: none;
+    margin-right: 1px;
+    margin-left: 0px;
+    
+    
+    
+}
+.tab >li>a:focus
+{
+    
+    color: rgb(13, 63, 65);
+    background-color: rgb(210, 225, 231);
+}
+.tab >li>a
+{
+    padding: 10px;
+    color: rgb(210, 225, 231);
+    background-color: rgba(0, 0, 0, 0.109);;
 }
 
 /*===================================== Hexagons ===========================================*/
@@ -323,7 +379,7 @@ nav>div>a:hover
     display: flex;
     align-items: center;
     
-    width: 100%;
+    width: 60vw;
     height: 3px;
     transform: skew(-30deg);
     background-color: rgba(255, 255, 255, 0.2);
@@ -341,4 +397,72 @@ nav>div>a:hover
     width: 100%;
     display: flex;
     align-items: center;
+}
+
+/*====================================== carrousel ==========================================*/
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  
+  .gallery {
+    background: #EEE;
+  }
+  
+  .gallery-cell {
+    width: 59%;
+    height: 450px;
+    margin-right: 10px;
+    background: rgba(0,247,255,0.9);
+   
+  }
+  .gallery-cell>img{
+    max-height: 450px;
+  }
+  /* cell number */
+  .gallery-cell:before {
+    display: block;
+    text-align: center;
+    
+    line-height: 450px;
+    font-size: 80px;
+    color: rgb(210, 225, 231);
+  }
+  
+  .flickity-page-dots {
+    bottom: 0px;
+  }
+  /* white circles */
+  .flickity-page-dots .dot {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background: transparent;
+    border: 2px solid white;
+  }
+  /* fill-in selected dot */
+  .flickity-page-dots .dot.is-selected {
+    background: rgb(210, 225, 231);
+  }
+
+@media only screen and (max-height:720px)
+{
+    
+    .photo-decoration
+    {
+        width: 250px;
+        height: 250px;
+    }
+    .photo-bg
+    {
+        width: 205px;
+        height: 205px;
+    }
+    .photo
+    {
+        width: 200px;
+        height: 200px;
+    }
 }
