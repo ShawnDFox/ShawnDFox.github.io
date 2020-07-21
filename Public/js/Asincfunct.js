@@ -90,7 +90,7 @@ $(document).ready(function(){
 
         $("#content").fadeOut("default",function()
         {
-            $.get('languages.html').done(function(msg){
+            $.get('Languages.html').done(function(msg){
                 $("#content").html(msg);
                 $("#content").fadeIn("fast");
             }); 
