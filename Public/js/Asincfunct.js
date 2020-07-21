@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $.post('AboutMe.html').done(function(msg){
+    $.get('AboutMe.html').done(function(msg){
         $("#content").html(msg);
     });
 
@@ -15,7 +15,7 @@ $(document).ready(function(){
         $("#portfolio").removeClass("current_page");
 
         $("#content").fadeOut("default",function(){
-            $.post('AboutMe.html').done(function(msg){
+            $.get('AboutMe.html').done(function(msg){
                 
                 $("#content").html(msg);
                 $("#content").fadeIn();
@@ -34,7 +34,7 @@ $(document).ready(function(){
         $("#portfolio").removeClass("current_page");
 
         $("#content").fadeOut("default",function(){
-            $.post('Education.html').done(function(msg){
+            $.get('Education.html').done(function(msg){
                 $("#content").html(msg);
                 $("#content").fadeIn();
             });   
@@ -52,7 +52,7 @@ $(document).ready(function(){
         $("#portfolio").removeClass("current_page");
 
         $("#content").fadeOut("default",function(){
-            $.post('Experience.html').done(function(msg){
+            $.get('Experience.html').done(function(msg){
                 $("#content").html(msg);
                 $("#content").fadeIn();
             });  
@@ -71,7 +71,7 @@ $(document).ready(function(){
 
         $("#content").fadeOut("default",function()
         {
-            $.post('Aptitude.html').done(function(msg){
+            $.get('Aptitude.html').done(function(msg){
                 $("#content").html(msg);
                 $("#content").fadeIn();
             }); 
@@ -90,7 +90,7 @@ $(document).ready(function(){
 
         $("#content").fadeOut("default",function()
         {
-            $.post('languages.html').done(function(msg){
+            $.get('languages.html').done(function(msg){
                 $("#content").html(msg);
                 $("#content").fadeIn("fast");
             }); 
@@ -109,7 +109,7 @@ $(document).ready(function(){
         $("#portfolio").addClass("current_page");
 
         $("#content").fadeOut("default",function(){
-            $.post('Portfolio.html').done(function(msg){
+            $.get('Portfolio.html').done(function(msg){
                 $("#content").html(msg);
                 $("#content").fadeIn();
             });  
