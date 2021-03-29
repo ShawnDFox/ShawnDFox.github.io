@@ -1,0 +1,20 @@
+@font-face {
+  font-family: orbitron-reg;
+  src: url("../fonts/Orbitron-Regular.ttf");
+}
+
+@font-face {
+  font-family: orbitron-bold;
+  src: url("../fonts/Orbitron-Bold.ttf");
+}
+
+@font-face {
+  font-family: orbitron-med;
+  src: url("../fonts/Orbitron-Medium.ttf");
+}
+
+@font-face {
+  font-family: michroma;
+  src: url("../fonts/Michroma.ttf");
+}
+/*# sourceMappingURL=Fonts.css.map */

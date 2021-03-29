@@ -5,10 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale-1.0"> 
         <link rel="stylesheet" href="//unpkg.com/flickity@2/dist/flickity.min.css">
         
-        <link rel="stylesheet" href="Public/css/Styles.css" type="text/css">
+        <link rel="stylesheet" href="Public/css/Main.css" type="text/css">
         
         
-        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
         
         </script><script src="//unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
         <script src="//kit.fontawesome.com/4d07930c60.js" crossorigin="anonymous"></script>
@@ -17,18 +17,27 @@
     </head>
     <body>
         <div class="container">
+           
             <div class="sidebar">
+                <div class="extra">
+                <span>Edad: 28</span>
                 <div class="photo-display">
-                    <span>Edad: 28</span>
+                    
                     <img src="Public/img/BG_deco-01.png" class="topleft">
-                    <img src="Public/img/rings-01.png" class="photo-decoration">
+                    <img src="Public/img/rings-01.png" class="photo-decoration position">
                     <div class="photo-bg"></div>
                     <img src="Public/img/IMG_1562.jpg" class="photo position">
-                    <span>Mario Armando Laverde</span>
+                    
+                </div>
+                <span>Mario A. Laverde Medina</span>
                 </div>
                 
+                <div id="Title">Un poco sobre mí</div>
+                <a href="#" class="icon" id="bars">
+                    <i class="fa fa-bars"></i>
+                  </a>
                 
-                <nav>
+                <nav id="links">
                     <div id="me" class="current_page">
                         <a href="#">Un poco sobre mí</a>
                     </div>
@@ -50,10 +59,8 @@
                 </nav>
                 
             </div>
-            <div class="content">
-                <div id="content">
-
-                </div>
+            <div class="content" id="content">
+                
 
             </div>
 <script src="Public/js/Asincfunct.js"></script>

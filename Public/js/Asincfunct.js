@@ -3,19 +3,51 @@ $(document).ready(function(){
     $.get('AboutMe.html').done(function(msg){
         $("#content").html(msg);
     });
+    $("#links a").click(function(){
+        let content = $(this).html();
+        console.log(SidenavWidth());
+        if(SidenavWidth() > 50)
+        {
+           $("#links").css("display","none");
+        }
+        $("#Title").html(content);
+        
 
-    $("#me").click(function(event){
+        //console.log(content);
+    });
+    $("#links a").click(function(event){
         event.preventDefault();
         
-        $("#me").addClass("current_page");
+        $("#me").removeClass("current_page");
         $("#education").removeClass("current_page");
         $("#experience").removeClass("current_page");
         $("#aptitude").removeClass("current_page");
         $("#languages").removeClass("current_page");
         $("#portfolio").removeClass("current_page");
 
+        $(this).parent().addClass("current_page");
+
+        let page ="";
+        
+        switch($(this).parent().attr("id"))
+        {
+            case "me":page = "AboutMe.html";
+            break;
+            case "education":page = "Education.html";
+            break;
+            case "experience":page = "Experience.html";
+            break;
+            case "aptitude":page = "Aptitude.html";
+            break;
+            case "languages":page = "Languages.html";
+            break;
+            case "portfolio":page = "Portfolio.html";
+            break;
+        }
+        
+
         $("#content").fadeOut("default",function(){
-            $.get('AboutMe.html').done(function(msg){
+            $.get(page).done(function(msg){
                 
                 $("#content").html(msg);
                 $("#content").fadeIn();
@@ -23,97 +55,20 @@ $(document).ready(function(){
         });
         
     });
-    $("#education").click(function(event){
-        event.preventDefault();
-
-        $("#me").removeClass("current_page");
-        $("#education").addClass("current_page");
-        $("#experience").removeClass("current_page");
-        $("#aptitude").removeClass("current_page");
-        $("#languages").removeClass("current_page");
-        $("#portfolio").removeClass("current_page");
-
-        $("#content").fadeOut("default",function(){
-            $.get('Education.html').done(function(msg){
-                $("#content").html(msg);
-                $("#content").fadeIn();
-            });   
-        });
-        
+    
+    $("#bars").click(function(){
+        $("#links").css("display") == "none" ? $("#links").css("display","block") : $("#links").css("display","none");
     });
-    $("#experience").click(function(event){
-        event.preventDefault();
 
-        $("#me").removeClass("current_page");
-        $("#education").removeClass("current_page");
-        $("#experience").addClass("current_page");
-        $("#aptitude").removeClass("current_page");
-        $("#languages").removeClass("current_page");
-        $("#portfolio").removeClass("current_page");
-
-        $("#content").fadeOut("default",function(){
-            $.get('Experience.html').done(function(msg){
-                $("#content").html(msg);
-                $("#content").fadeIn();
-            });  
-        });
-        
+    $(window).resize(function(){
+        console.log(SidenavWidth());
+        //$("#links").css("width") == "100%" 
+        SidenavWidth() > 50 ? $("#links").css("display","none") : $("#links").css("display","block");
     });
-    $("#aptitude").click(function(event){
-        event.preventDefault();
 
-        $("#me").removeClass("current_page");
-        $("#education").removeClass("current_page");
-        $("#experience").removeClass("current_page");
-        $("#aptitude").addClass("current_page");
-        $("#languages").removeClass("current_page");
-        $("#portfolio").removeClass("current_page");
-
-        $("#content").fadeOut("default",function()
-        {
-            $.get('Aptitude.html').done(function(msg){
-                $("#content").html(msg);
-                $("#content").fadeIn();
-            }); 
-        });
-        
-    });
-    $("#languages").click(function(event){
-        event.preventDefault();
-
-        $("#me").removeClass("current_page");
-        $("#education").removeClass("current_page");
-        $("#experience").removeClass("current_page");
-        $("#aptitude").removeClass("current_page");
-        $("#languages").addClass("current_page");
-        $("#portfolio").removeClass("current_page");
-
-        $("#content").fadeOut("default",function()
-        {
-            $.get('Languages.html').done(function(msg){
-                $("#content").html(msg);
-                $("#content").fadeIn("fast");
-            }); 
-        });
-        
-       
-    });
-    $("#portfolio").click(function(event){
-        event.preventDefault();
-
-        $("#me").removeClass("current_page");
-        $("#education").removeClass("current_page");
-        $("#experience").removeClass("current_page");
-        $("#aptitude").removeClass("current_page");
-        $("#languages").removeClass("current_page");
-        $("#portfolio").addClass("current_page");
-
-        $("#content").fadeOut("default",function(){
-            $.get('Portfolio.html').done(function(msg){
-                $("#content").html(msg);
-                $("#content").fadeIn();
-            });  
-        });
-        
-    });
+    function SidenavWidth()
+    {
+        var W = $(".sidebar").width() / $(".sidebar").parent().width() *100;
+        return W;
+    }
 });
